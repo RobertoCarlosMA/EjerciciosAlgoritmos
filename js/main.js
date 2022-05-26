@@ -1,9 +1,8 @@
 
-//TAREA
 run();
 
 function run(){
-    const option = prompt('Elija una opción: \n 1) Ingresar dos números (entre 1 y 100) diferentes y obtenga el mayor \n 2) Ingresar tres números (entre 1 y 100) diferentes y obtenga el menor \n 3) Ingresar un número entero (entre 100 y 200) y obtiene si es múltiplo de 3 \n 4) Ingresar tres números y obtiene si uno es la suma de los otros dos \n 5) Ingresar un número y obtenga si es par o impar')
+    const option = prompt('Elige una opción: \n 1) Ingresar dos números (entre 1 y 100) diferentes y obtenga el mayor \n 2) Ingresar tres números (entre 1 y 100) diferentes y obtenga el menor \n 3) Ingresar un número entero (entre 100 y 200) y obtiene si es múltiplo de 3 \n 4) Ingresar tres números y obtiene si uno es la suma de los otros dos \n 5) Ingresar un número y obtenga si es par o impar')
     switch (option) {
         case null:
             if(confirm('¿Está seguro que desea salir del programa?')) return;
@@ -24,7 +23,7 @@ function run(){
             parOImpar();
             break;
         default:
-            alert('Elija una opción válida');
+            alert('Elige una opción válida');
             window.location.reload();
             return;
     }
