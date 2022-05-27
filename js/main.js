@@ -2,7 +2,7 @@
 run();
 
 function run(){
-    const option = prompt('Elige una opción: \n 1) Ingresar dos números (entre 1 y 100) diferentes y obtenga el mayor \n 2) Ingresar tres números (entre 1 y 100) diferentes y obtenga el menor \n 3) Ingresar un número entero (entre 100 y 200) y obtiene si es múltiplo de 3 \n 4) Ingresar tres números y obtiene si uno es la suma de los otros dos \n 5) Ingresar un número y obtenga si es par o impar')
+    const option = prompt('Elige una opción: \n 1) Ingresar dos números (entre 1 y 100) diferentes y obtenga el mayor \n 2) Ingresar tres números (entre 1 y 100) diferentes y obtenga el menor \n 3) Piensa un número (entre 1 y 100) y adivina el número \n 4) Ingresar un número entero (entre 100 y 200) y obtiene si es múltiplo de 3 \n 5) Ingresar tres números y obtiene si uno es la suma de los otros dos \n 6) Ingresar un número y obtenga si es par o impar')
     switch (option) {
         case null:
             if(confirm('¿Está seguro que desea salir del programa?')) return;
@@ -14,12 +14,15 @@ function run(){
             cualEsMenor();
             break;
         case '3':
-            multiploDeTres();
+            adivinaNumero();
             break;
         case '4':
-            sumaDeOtrosDos();
+            multiploDeTres();
             break;
         case '5':
+            sumaDeOtrosDos();
+            break;
+        case '6':
             parOImpar();
             break;
         default:
@@ -61,6 +64,17 @@ function cualEsMenor(){
         secondNumber < thirdNumber ? 'El número ' + secondNumber : 'El número ' + thirdNumber;
     alert(mensaje + ' es el menor de todos');
     window.location.reload();
+}
+
+
+function adivinaNumero(){
+    alert('Por favor piense un número entre 1 y 100');
+    alert('Por favor siga los siguientes pasos: \n 1) Sume 3 al número elegido. \n 2) Multiplique por 2 el resultado del paso anterior. \n 3)Reste 8 al resultado del paso anterior. \n 4) Divida por 2 el resultado del paso anterior.')
+    const numberField = parseFloat(prompt('Por favor ingrese el resultado del ultimo paso realizado anteriormente')) + 1;
+    if(!isValid(numberField)) return;
+    if(!isBetweenInRange(numberField, 1, 100)) return;
+    alert('El número que usted eligio es el: ' + numberField);
+    
 }
 
 
